@@ -7,6 +7,7 @@ gem 'rails', '4.1.7'
 gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :artists
   get 'pages/info'
 
   resources :artworks
-  root :to => redirect('/artworks')
+  root 'artworks#index'
+
+  #root :to => redirect('/artworks')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
