@@ -1,4 +1,4 @@
-<h1>Listing artworks</h1>
+<h1>Artworks</h1>
 
 <table>
   <thead>
@@ -15,7 +15,7 @@
       <tr>
         <td><%= artwork.caption %></td>
         <td><%= artwork.description %></td>
-        <td><%= artwork.picture %></td>
+        <td><%= image_tag artwork.picture_url(:thumb).to_s %></td>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
         <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
