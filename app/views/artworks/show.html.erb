@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Caption:</strong>
-  <%= @artwork.caption %>
+	<!--<strong>Caption</strong>-->
+	<%= @artwork.caption %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @artwork.description %>
+<!--<strong>Picture:</strong>-->
+	<%= image_tag(@artwork.picture_url, :width => 600) if @artwork.picture.present? %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
- <%= image_tag(@artwork.picture_url, :width => 600) if @artwork.picture.present? %>
+	<strong>Description:</strong>
+	<%= @artwork.description %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
 <%= link_to 'Back', artworks_path %>

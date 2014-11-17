@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_artist!, except: [:index, :show]
   # GET /artworks
   # GET /artworks.json
   def index
@@ -14,7 +14,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks/new
   def new
-    @artwork = Artwork.new
+    @artwork = current_artist.artworks.build
   end
 
   # GET /artworks/1/edit
@@ -24,7 +24,7 @@ class ArtworksController < ApplicationController
   # POST /artworks
   # POST /artworks.json
   def create
-    @artwork = Artwork.new(artwork_params)
+    @artwork = current_artist.artworks.build(artwork_params)
 
     respond_to do |format|
       if @artwork.save
