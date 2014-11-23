@@ -30,7 +30,7 @@
 <h1>Artworks</h1>
 
 <% @artworks.in_groups_of(3) do |group| %>
-  <div class="row">
+  <div class="row row-magic">
     <% group.compact.each do |artwork| %>
       <div class="col-md-4">
         <%= image_tag artwork.picture_url, width: '100%' if artwork.picture.present?%>

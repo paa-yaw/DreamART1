@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :artists
-  get 'pages/info'
+  devise_for :artists do |r|
+    resources :artworks
+  end
+
+  get 'pages/dreamart' => 'pages#info'
 
   resources :artworks
   root 'artworks#index'
