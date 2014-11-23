@@ -29,7 +29,7 @@
 <!--<%= link_to 'New Artwork', new_artwork_path %>-->
 <h1>Artworks</h1>
 
-<% @artworks.in_groups_of(3) do |group| %>
+<% @artwork.in_groups_of(3) do |group| %>
   <div class="row row-magic">
     <% group.compact.each do |artwork| %>
       <div class="col-md-4">

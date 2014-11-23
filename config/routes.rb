@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :artists do |r|
-    resources :artworks
-  end
+  devise_for :artists
 
   get 'pages/dreamart' => 'pages#info'
 
-  resources :artworks
+   resources :artworks
+
   root 'artworks#index'
 
   #root :to => redirect('/artworks')
