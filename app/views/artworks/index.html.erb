@@ -33,7 +33,8 @@
   <div class="row row-magic">
     <% group.compact.each do |artwork| %>
       <div class="col-md-4">
-        <%= image_tag artwork.picture_url, width: '100%' if artwork.picture.present?%>
+       <%= image_tag artwork.picture_url, width: '100%' if artwork.picture.present?%>
+           <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>-->
         <h4><%= link_to artwork.caption, artwork %></h4>
         <%= artwork.description %>
       </div>
