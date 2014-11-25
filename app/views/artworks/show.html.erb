@@ -22,9 +22,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="row">
+<!--<div class="row">
   <div class="col-md-9">
-    <%= image_tag(@artwork.picture_url, width: '90%') if @artwork.picture.present? %>
+    <%= image_tag(@artwork.picture_url, width: '70%') if @artwork.picture.present? %>
   </div>
 
   <div class="col-md-3">
@@ -36,5 +36,40 @@
       <%= link_to 'Back', artworks_path %>
     </p>
   </div>
+</div>-->
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6"> 
+        <%= image_tag(@artwork.picture_url, width: '70%') if @artwork.picture.present? %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong><%= @artwork.caption%></strong></td>
+                <tr>
+                  <td><strong>Description:</strong>
+                  <td><%= @artwork.description %>
+                </td>
+                </tr>
+                
+                </td>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+<p>
+      <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+      <%= link_to 'Destroy', @artwork, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', artworks_path %>
+    </p>
+
+
 
