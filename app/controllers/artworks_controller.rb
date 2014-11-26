@@ -4,9 +4,14 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.json
   def index
-    @artworks = Artwork.all
-     
+    if session["warden.user.artist.key"]
+      artist_id=session["warden.user.artist.key"][0][0]
+      artist=Artist.find artist_id
+      @artworks=artist.artworks.all
+    else
+    @artworks = Artwork.all  
   end
+end
 
   # GET /artworks/1
   # GET /artworks/1.json

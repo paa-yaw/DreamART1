@@ -29,7 +29,7 @@
 
   <div class="col-md-3">
     <p><b></b><%= @artwork.caption %></p>
-    <p><b>Description: </b><%= @artwork.description %></p>
+    <p><b>Description: </b><%= @artwork.description %></p>  
     <p>
       <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
       <%= link_to 'Destroy', @artwork, data: { confirm: 'Are you sure?' }, method: :delete %> |
