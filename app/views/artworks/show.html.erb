@@ -20,7 +20,6 @@
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
 <%= link_to 'Back', artworks_path %>-->
 
-<p id="notice"><%= notice %></p>
 
 <!--<div class="row">
   <div class="col-md-9">
@@ -37,6 +36,7 @@
     </p>
   </div>
 </div>-->
+<p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -55,24 +55,25 @@
                 
               </tr>
 
-              <h2>Add a comment:</h2>
-              <%= form_for([@artwork, @artwork.reviews.build]) do |f| %>
-              <p>
+            <!-- <h2>Add a comment:</h2>
+              
+              <%= form_for([@artwork, @review]) do |f| %>
+              
                 <%= f.label :comment %><br>
                 <%= f.text_field :comment%>
-              </p>
-              <p>
+              
+             <!-- <p>
                 <%= f.label :rating %><br>
                 <%= f.text_area :rating %>
-              </p>
-              <p>
-                <%= f.submit %>
-              </p>
-              <% end %>
+              </p>-->
+             
+             <!--   <%= f.submit %>
+              
+              <% end %>-->
 
 
 
-            <!-- <%= form_for([@artist, @artwork]) do |f| %>
+             <%= form_for([@artwork, @review]) do |f| %>
               <div class="field">
                 <%= f.label :comment %><br>
                 <%= f.text_field :comment %>
@@ -82,7 +83,7 @@
                 <%= f.text_area :rating %>
               </div>
               <div class="actions">
-                <%= f.submit %>
+                <%= f.submit "Add comment" %>
               </div>
               <%end%>
                 <!--<tr>

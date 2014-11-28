@@ -10,12 +10,14 @@ class ArtworksController < ApplicationController
       @artworks=artist.artworks.all
     else
     @artworks = Artwork.all  
+    end
   end
-end
 
   # GET /artworks/1
   # GET /artworks/1.json
   def show
+    @artwork = Artwork.find(params[:id])
+    @review= @artwork.reviews.build
   end
 
 
