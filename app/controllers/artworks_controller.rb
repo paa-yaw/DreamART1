@@ -18,8 +18,6 @@ end
   def show
   end
 
-  def comment_rating
-  end
 
   # GET /artworks/new
   def new

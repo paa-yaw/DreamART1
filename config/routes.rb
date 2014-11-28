@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'pages/dreamart' => 'pages#info'
 
-   resources :artworks
+   resources :artworks do
+    resources :reviews
+  end
 
   root 'artworks#index'
 
