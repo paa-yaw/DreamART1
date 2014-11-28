@@ -18,6 +18,9 @@ end
   def show
   end
 
+  def comment_rating
+  end
+
   # GET /artworks/new
   def new
     @artwork = current_artist.artworks.build
@@ -75,6 +78,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:caption, :description, :picture, :remote_picture_url)
+      params.require(:artwork).permit(:caption, :description, :picture, :remote_picture_url, :rating, :comment)
     end
 end

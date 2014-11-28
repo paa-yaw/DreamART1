@@ -27,16 +27,32 @@
 <br>
 
 <!--<%= link_to 'New Artwork', new_artwork_path %>-->
+<% if !artist_signed_in? %>
+<!--<div class='jumbotron'>-->
 <h1>Artworks</h1>
+<p> This is a display of wonderful artworks by amazing pencil artists!</p>
+
+<p><%= link_to 'Sign Up If You an pencil artist!', new_artist_registration_path, class: 'btn btn-primary btn-lg'%></p>
+<!--<h1>Artworks</h1>-->
+<% end %>
 
 <% @artworks.in_groups_of(3) do |group| %>
   <div class="row row-magic">
     <% group.compact.each do |artwork| %>
       <div class="col-md-4">
-       <%= image_tag artwork.picture_url, width: '100%' if artwork.picture.present?%>
+       <%= link_to((image_tag artwork.picture_url, width: '100%'), artwork) if artwork.picture.present?%>
            <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>-->
         <h4><%= link_to artwork.caption, artwork %></h4>
+        
+           
         <%= artwork.description %>
+        <h4><%= link_to 'Comment', artwork%></h4>
+
+          <%= artwork.comment%>
+
+          <h4><%= link_to 'Rating', artwork %></h4>
+          <%= artwork.rating %>
+
       </div>
     <% end %>
   </div>

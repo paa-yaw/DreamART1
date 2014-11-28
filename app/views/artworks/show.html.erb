@@ -48,28 +48,49 @@
             <tbody>
               <tr>
                 <td><strong><%= @artwork.caption%></strong></td>
-                <tr>
-                  <td><strong>Description:</strong>
-                  <td><%= @artwork.description %>
-                </td>
+              </tr>tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @artwork.description %></td>
+                
+              </tr>
+
+
+              <%= form_for([@artist, @artwork]) do |f| %>
+              <div class="field">
+                <%= f.label :comment %><br>
+                <%= f.text_field :comment %>
+              </div>
+              <div class="field">
+                <%= f.label :rating %><br>
+                <%= f.text_area :rating %>
+              </div>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+              <%end%>
+                <!--<tr>
+                  <td><strong>Rating:</strong></td>
+                  <td><strong><%= @artwork.rating%></strong></td>
+                
                 </tr>
+                <tr>
+                  <td><strong>Comment:</strong></td>
+                  <td><%= @artwork.comment %></td>
+                </tr>-->
                 
-                </td>
-                
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<p>
-      <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-      <%= link_to 'Destroy', @artwork, data: { confirm: 'Are you sure?' }, method: :delete %> |
-      <%= link_to 'Back', artworks_path %>
-    </p>
+  <p>
+    <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+    <%= link_to 'Destroy', @artwork, data: { confirm: 'Are you sure?' }, method: :delete %> |
+    <%= link_to 'Back', artworks_path %>
+  </p>
 
 
 
