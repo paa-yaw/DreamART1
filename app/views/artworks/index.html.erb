@@ -37,27 +37,35 @@
 <% end %>
 
 <% @artworks.in_groups_of(3) do |group| %>
-  <div class="row row-magic">
-    <% group.compact.each do |artwork| %>
-      <div class="col-md-4">
-       <%= link_to((image_tag artwork.picture_url, width: '100%'), artwork) if artwork.picture.present?%>
-           <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>-->
-        <h4><%= link_to artwork.caption, artwork %></h4>
-        
-           
-        <%= artwork.description %>
-       <h4><%= link_to 'Comment', artwork%></h4>
-
-          <% artwork.reviews.each do |t| %>
-          <%= t.comment %>
-         
-          <% end %>
+<div class="row row-magic">
+  <% group.compact.each do |artwork| %>
+  <div class="col-md-4">
+   <%= link_to((image_tag artwork.picture_url, width: '100%'), artwork) if artwork.picture.present?%>
+   <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>-->
+   <h4><%= link_to artwork.caption, artwork %></h4>
 
 
-         <!-- <h4><%= link_to 'Rating', artwork %></h4>
-         <!-- <%= artwork.reviews %>-->
+   <%= artwork.description %>
+   <table>
+    <tbody>
+      <tr>
+        <td>   </td>
+      </tr>
+    </tbody>
+  </table>
 
-      </div>
-    <% end %>
-  </div>
+  <% artwork.reviews.each do |t| %>
+  <h4><%= link_to 'Comment', artwork%></h4>
+
+  <%= t.comment %>
+
+  <h4><%= link_to 'Rating', artwork%></h4>
+  <%= t.rating %>
+  <% end %>
+
+ 
+
+</div>
+<% end %>
+</div>
 <% end %>

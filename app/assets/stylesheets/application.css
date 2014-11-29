@@ -10,11 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require_twitter/bootstrap
+ *= require responsive
+ *= require style
+ *= require_tree .
  */
- body { padding-top: 60px; 
+ /*/*//*body { padding-top: 60px; 
  background: linear-gradient(45deg, #333333, #4C4C00, #333333);
    text-decoration-color:white;}
  a:hover { 
@@ -38,7 +40,7 @@ p {
 h1 {
 	color: #3399FF;
 }
-.navbar-default .navbar-nav > .disabled > a,
+/*.navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
   color: #cccccc;
@@ -47,15 +49,15 @@ h1 {
 .navbar-default .navbar-nav > li > a {
   color: black;
 }
-
-@media (min-width: 768px) {
+*/
+/*@media (min-width: 768px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   
     color: black;
 }
-.navbar-default .navbar-text {
+/*.navbar-default .navbar-text {
   color: black;
 }
 .navbar-default .navbar-link {
@@ -68,7 +70,7 @@ label {
   font-weight: bold;
   color:#3399FF
 }
-.navbar-default .navbar-nav > li > a,
+/*.navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > a:hover,
 .navbar-default .navbar-nav > a:focus {
   color: black;
@@ -109,4 +111,4 @@ color: #3399FF;
   vertical-align: top;
   border-top: 1px solid #dddddd;
   color: white;
-}
+}*/
