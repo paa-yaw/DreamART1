@@ -36,20 +36,20 @@
                     <li><a href="/artworks">Art Gallery</a></li>
                     <li class="nav navbar-nav"> <a href="/artworks/new">New Artwork</a></li>
                     <% if artist_signed_in? %>
-                 
-                  <li><%= link_to 'Edit profile', edit_artist_registration_path, :class => 'navbar-link' %></li> 
-                  <li><%= link_to "Logout", destroy_artist_session_path, method: :delete, :class => 'navbar-link'  %></li>
-                  <% else %>
-                  <li><%= link_to "Sign up", new_artist_registration_path, :class => 'navbar-link'  %></li>
-                  <li><%= link_to "Login", new_artist_session_path, :class => 'navbar-link'  %></li>
-                  <% end %>
-                
+                    
+                    <li><%= link_to 'Edit profile', edit_artist_registration_path, :class => 'navbar-link' %></li> 
+                    <li><%= link_to "Logout", destroy_artist_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                    <% else %>
+                    <li><%= link_to "Sign up", new_artist_registration_path, :class => 'navbar-link'  %></li>
+                    <li><%= link_to "Login", new_artist_session_path, :class => 'navbar-link'  %></li>
+                    <% end %>
+                    
 
-                <li class="navbar-text" style="margin-top: 20px; margin-left: 100px; margin-right: -200px;">
-                <% if artist_signed_in? %>
-                   Logged in as <strong><%= current_artist.email %></strong>.
-                   <% end %>
-                </li>
+                    <li class="navbar-text" style="margin-top: 20px; margin-left: 100px; margin-right: -200px;">
+                      <% if artist_signed_in? %>
+                      Logged in as <strong><%= current_artist.email %></strong>.
+                      <% end %>
+                    </li>
                <!-- <li><a href="index.html">About</a></li>
                 <li class="sub-menu active"><a href="index-1.html">Services</a>
                       <ul>
@@ -64,10 +64,12 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          
+
+       </div>
+     </div>
+   </div>
+ </div>
 </header>
 <div class="bg-content"> 
 

@@ -4,12 +4,15 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.json
   def index
+
     if session["warden.user.artist.key"]
       artist_id=session["warden.user.artist.key"][0][0]
       artist=Artist.find artist_id
-      @artworks=artist.artworks.all
+       @artworks=artist.artworks.all
+      #@artworks =Artwork.where("caption Like ?", "%#{params[:search]}%")
     else
-    @artworks = Artwork.all  
+       @artworks =Artwork.where("caption Like ?", "%#{params[:search]}%")
+    # @artworks = Artwork.all  
     end
   end
 
