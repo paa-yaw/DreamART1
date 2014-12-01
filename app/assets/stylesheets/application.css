@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require_self
- *= require_twitter/bootstrap
+ *= require bootstrap
  *= require responsive
  *= require style
  *= require_tree .

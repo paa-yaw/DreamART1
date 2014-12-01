@@ -27,21 +27,21 @@
 <br>
 
 <!--<%= link_to 'New Artwork', new_artwork_path %>-->
-<% if !artist_signed_in? %>
+<%# if !artist_signed_in? %>
 <!--<div class='jumbotron'>-->
-<h1>Artworks</h1>
+<!-- <h1>Artworks</h1>
 <p> This is a display of wonderful artworks by amazing pencil artists!</p>
 
 <p><%= link_to 'Sign Up If You an pencil artist!', new_artist_registration_path, class: 'btn btn-primary btn-lg'%></p>
 <!--<h1>Artworks</h1>-->
-<% end %>
-
+<%# end %>
+<!--
 <% @artworks.in_groups_of(3) do |group| %>
 <div class="row row-magic">
   <% group.compact.each do |artwork| %>
   <div class="col-md-4">
    <%= link_to((image_tag artwork.picture_url, width: '100%'), artwork) if artwork.picture.present?%>
-   <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>-->
+   <!--  <%= image_tag artwork.picture_url(:thumb).to_s if artwork.picture.present?%>
    <h4><%= link_to artwork.caption, artwork %></h4>
 
 
@@ -69,3 +69,68 @@
 <% end %>
 </div>
 <% end %>
+-->
+<h3>ARTWORKS</h3>
+
+<ul class="thumbnails thumbnails-1 list-services">
+  <% @artworks.each do |artwork| %>
+  <li class="span4">
+    <%= link_to artwork_path(artwork) do %>
+    <div class="thumbnail thumbnail-1"> <%= image_tag artwork.picture_url, :class => 'thumbnails-images'%>
+      <section><!-- <a href="#" class="link-1">--><%= artwork.caption %></a>
+        <p><%= artwork.description %></p>
+
+        <% if @artworks.blank? %>
+        <h4> No artworks as at yet, please click to add a new artwork!</h4>
+        <% else %>
+        <% artwork.reviews.each do |t| %>
+        <h2><%= link_to 'Comment', artwork%></h2>
+
+        <%= t.comment %>
+        <% end %>
+        <% end %>
+
+      </section>
+    </div>
+    <% end %>
+  </li>
+  <% end %>
+
+<!-- 
+
+              <li class="span4">
+            <div class="thumbnail thumbnail-1"> <img  src="page2-img2.jpg" alt="">
+                  <section> <a href="#" class="link-1">At vero eos et accusamus et iusto </a>
+                <p>Deleniti atque corrupti quos dolores molestias excepturi sint occaecati cupiditate nonprovident similique sunt in culpa.</p>
+              </section>
+                </div>
+          </li>
+              <li class="span4">
+            <div class="thumbnail thumbnail-1"> <img  src="page2-img3.jpg" alt="">
+                  <section> <a href="#" class="link-1">At vero eos et accusamus et iusto </a>
+                <p>Deleniti atque corrupti quos dolores molestias excepturi sint occaecati cupiditate nonprovident similique sunt in culpa.</p>
+              </section>
+                </div>
+          </li>
+              <li class="span4">
+            <div class="thumbnail thumbnail-1"> <img  src="img/page2-img4.jpg" alt="">
+                  <section> <a href="#" class="link-1">At vero eos et accusamus et iusto </a>
+                <p>Deleniti atque corrupti quos dolores molestias excepturi sint occaecati cupiditate nonprovident similique sunt in culpa.</p>
+              </section>
+                </div>
+          </li>
+              <li class="span4">
+            <div class="thumbnail thumbnail-1"> <img  src="page2-img5.jpg" alt="">
+                  <section> <a href="#" class="link-1">At vero eos et accusamus et iusto </a>
+                <p>Deleniti atque corrupti quos dolores molestias excepturi sint occaecati cupiditate nonprovident similique sunt in culpa.</p>
+              </section>
+                </div>
+          </li>
+              <li class="span4">
+            <div class="thumbnail thumbnail-1"> <img  src="page2-img6.jpg" alt="">
+                  <section> <a href="#" class="link-1">At vero eos et accusamus et iusto </a>
+                <p>Deleniti atque corrupti quos dolores molestias excepturi sint occaecati cupiditate nonprovident similique sunt in culpa.</p>
+              </section>
+                </div>
+              </li> -->
+            </ul>

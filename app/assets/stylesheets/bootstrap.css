@@ -3514,9 +3514,9 @@ input[type="submit"].btn.btn-mini {
   display: block;
   padding: 10px 20px 10px;
   margin-left: -20px;
-  font-size: 20px;
+  font-size: 80px;
   font-weight: 200;
-  color: #777777;
+  color: #000000;
   text-shadow: 0 1px 0 #ffffff;
 }
 .navbar .brand:hover {
@@ -3666,7 +3666,7 @@ input[type="submit"].btn.btn-mini {
   left: 0;
   display: block;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 0 310px 0 0;
 }
 .navbar .nav.pull-right {
   float: right;
@@ -4865,6 +4865,7 @@ a.badge:hover {
 }
 .pull-right {
   float: right;
+  font-size: 18px;
 }
 .pull-left {
   float: left;
